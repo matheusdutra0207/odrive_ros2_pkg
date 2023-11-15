@@ -21,9 +21,6 @@ RUN source install/setup.bash
 WORKDIR /workspace/ros2_ws/src/odrive_ros2_pkg
 RUN python3 -m pip install .
 
-WORKDIR /workspace/ros2_ws/src/odrive_ros2_pkg/odrive_config
-RUN odrivetool restore-config my_config.json
-
 WORKDIR /workspace/ros2_ws
 
 
