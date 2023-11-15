@@ -24,7 +24,7 @@ ros2 topic echo odrive/odom --field pose.pose.position
 ## To publish cmd_vel topic
 
 ```
-Docker exec -it odrive_ros2 bash
+sudo docker exec -it odrive_ros2 bash
 ```
 
 ```
