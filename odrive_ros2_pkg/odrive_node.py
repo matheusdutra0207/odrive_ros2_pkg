@@ -308,10 +308,10 @@ class OdriveNode(Node):
         tyre_circumference = self.tyre_circumference
 
         # Twist/velocity: calculated from motor values only
-        s = tyre_circumference * (self.vel_r-self.vel_l) / (2.0)
-        w = tyre_circumference* (self.vel_r+self.vel_l) / (wheel_track) # angle: vel_r*tyre_radius - vel_l*tyre_radius
-        #s = tyre_circumference * (self.vel_l+self.vel_r) / (2.0*self.encoder_cpr)
-        #w = tyre_circumference * (self.vel_r-self.vel_l) / (wheel_track * self.encoder_cpr)
+        #s = tyre_circumference * (self.vel_r-self.vel_l) / (2.0)
+        #w = tyre_circumference* (self.vel_r+self.vel_l) / (wheel_track) # angle: vel_r*tyre_radius - vel_l*tyre_radius
+        s = tyre_circumference * (self.vel_l+self.vel_r) / (2.0*self.encoder_cpr)
+        w = tyre_circumference * (self.vel_r-self.vel_l) / (wheel_track * self.encoder_cpr)
         self.odom_msg.twist.twist.linear.x = s
         self.odom_msg.twist.twist.angular.z = w
 
