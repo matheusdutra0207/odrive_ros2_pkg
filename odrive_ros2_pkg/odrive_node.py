@@ -372,12 +372,10 @@ def main(args=None):
     while True:
         try:
             node = OdriveNode()
-            break
+            rclpy.spin(node)
         except Exception as e:
             print(f'Exception: {e}') 
             
-    rclpy.spin(node)
-
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
