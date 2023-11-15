@@ -14,11 +14,11 @@ ros2 launch odrive_launch.py
 ## To consume the robot odometry 
 
 ```
-Docker exec -it odrive_ros2 bash
+sudo docker exec -it odrive_ros2 bash
 ```
 
 ```
-source install/setup.bash
+source /opt/ros/humble/setup.bash
 ros2 topic echo odrive/odom --field pose.pose.position
 ```
 ## To publish cmd_vel topic
@@ -28,7 +28,7 @@ Docker exec -it odrive_ros2 bash
 ```
 
 ```
-source install/setup.bash
+source /opt/ros/humble/setup.bash
 ros2 topic pub --once cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.1}}"
 ```
 
